@@ -61,6 +61,7 @@ Linux の命令を使うために WSL を導入します。仮想環境などの
     コマンドプロンプトやPowerShellからGitのコマンドだけが使用できるように。
 - Use Git and included Unix tools from the Windows Command Prompt <br>
     gitだけでなく、他のlsやlessなどをコマンドプロンプトやPowerShellから使用可能になります。 
+    
 今回はデフォルトのまま進める。
 9. SSLライブラリの選択。初期設定で問題なし。
 10. 改行の取り扱いの設定
@@ -70,6 +71,7 @@ Linux の命令を使うために WSL を導入します。仮想環境などの
     チェックアウト時は改行コードについては何もしない、コミット時には全てLFに変換される。
 - Checkout as-is, commit as-is <br>
     改行コードについては何もしない。
+
 今回はデフォルトのまま進める。
 11. Gitで使用するコンソールをCygwinで使用されているMinTTYを使用するか、Windowsの標準コンソールを使用するか選択。Windowsの標準コンソールを選択。
 12. gitconfigについての設定
@@ -79,6 +81,7 @@ Linux の命令を使うために WSL を導入します。仮想環境などの
     GitHub等にアクセスする際の二段階認証に対応するかのオプション
 - Enable symbolic links <br>
     シンボリックリンクの使用/不使用のオプション 
+
 とりあえずデフォルトのまま進める。
 13. Install をクリックするとインストール開始。
 14. Finish で完了。
