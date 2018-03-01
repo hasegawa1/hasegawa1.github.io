@@ -21,8 +21,7 @@ Linux の命令を使うために WSL を導入します。仮想環境などの
 
 
 ## Visial Studio Code のインストール
-
-エディタには Visual Studio Code を使います。執筆時点での最新バージョンは1.20.1。
+エディタには Visual Studio Code を使う。執筆時点での最新バージョンは1.20.1。このバージョンから Python のディストリビューション Anaconda と同時インストールができるようになった。Python も使う場合はそれを利用するのがよい。
 
 1. [https://code.visualstudio.com/](https://code.visualstudio.com/)からダウンロード。
 2. .exeファイルを実行。
@@ -85,7 +84,7 @@ Linux の命令を使うために WSL を導入します。仮想環境などの
 - [こっそり始めるGit／GitHub超入門](http://www.atmarkit.co.jp/ait/series/3190/)
 - [今日からはじめるGitHub 〜 初心者がGitをインストールして、プルリクできるようになるまでを解説](https://employment.en-japan.com/engineerhub/entry/2017/01/31/110000#%E7%92%B0%E5%A2%83%E3%81%AE%E6%A7%8B%E7%AF%892-SSH%E3%81%AE%E9%8D%B5%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B)
 
-## VcXsrvのインストール
+## VcXsrv のインストール
 Windows 用の X Server の VcXsrv をインストールする。Xming は寄付版ならまだいいらしい。執筆時点での最新バージョンは1.19.6.0。
 
 1. [https://sourceforge.net/projects/vcxsrv/files/vcxsrv/](https://sourceforge.net/projects/vcxsrv/files/vcxsrv/)からダウンロード。
@@ -165,6 +164,28 @@ sudo apt install gnuplot-x11
 - [「Windows Subsystem for Linux(WSL)」セットアップガイド【スクリーンショットつき解説】](https://linuxfan.info/wsl-setup-guide)
 
 ## ターミナルの設定
+Terminal として [Tilix](https://gnunn1.github.io/tilix-web/) を使う。まずはインストール。
+```
+sudo apt install tilix
+```
+また、日本語入力ができるよう umi もインストールする。
+```
+sudo apt install uim-fep uim-anthy
+```
+次に、 umi の設定を書く。
+```
+cat << EOF > ~/.uim
+(define default-im-name 'anthy)
+(define-key generic-on-key? '("<Control> "))
+(define-key generic-off-key? '("<Control> "))
+EOF
+```
+これで Tilix を使っているときに、Ctrl+Space で日本語入力の切り替えができるようになる。もしここを変えたい場合は、<Control> の部分を書き換えればよい。
+ここで、Tilix を起動してみる。
+```
+export DISPLAY=:0.0
+gnome-terminal -e uim-fep
+```
 
 参考文献：
 - [最高のBoW(Bash on Ubuntu on Windows)環境のために](http://mjhd.hatenablog.com/entry/2016/11/27/185902)
