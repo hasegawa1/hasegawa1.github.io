@@ -22,7 +22,7 @@ Linux の命令を使うために WSL を導入します。仮想環境などの
 
 ## Visial Studio Code のインストール
 
-エディタには Visual Studio Code を使います。執筆時点での最新バージョンは1.20.1です。
+エディタには Visual Studio Code を使います。執筆時点での最新バージョンは1.20.1。
 
 1. [https://code.visualstudio.com/](https://code.visualstudio.com/)からダウンロード。
 2. .exeファイルを実行。
@@ -37,7 +37,7 @@ Linux の命令を使うために WSL を導入します。仮想環境などの
 
 ## Git for Windows のインストール
 
-分散型バージョン管理システムの Git をインストールします。wslgit なるものもあります。執筆時点での最新バージョンは2.16.2です。
+分散型バージョン管理システムの Git をインストールします。wslgit なるものもあります。執筆時点での最新バージョンは2.16.2。
 
 1. [https://git-scm.com/](https://git-scm.com/)からダウンロード。
 2. .exeファイルを実行。
@@ -84,6 +84,17 @@ Linux の命令を使うために WSL を導入します。仮想環境などの
 - [自分用 Git For Windowsのインストール手順](https://qiita.com/toshi-click/items/dcf3dd48fdc74c91b409)
 - [こっそり始めるGit／GitHub超入門](http://www.atmarkit.co.jp/ait/series/3190/)
 - [今日からはじめるGitHub 〜 初心者がGitをインストールして、プルリクできるようになるまでを解説](https://employment.en-japan.com/engineerhub/entry/2017/01/31/110000#%E7%92%B0%E5%A2%83%E3%81%AE%E6%A7%8B%E7%AF%892-SSH%E3%81%AE%E9%8D%B5%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B)
+
+## VcXsrvのインストール
+Windows 用の X Server の VcXsrv をインストールする。Xming は寄付版ならまだいいらしい。執筆時点での最新バージョンは1.19.6.0。
+
+1. [https://sourceforge.net/projects/vcxsrv/files/vcxsrv/](https://sourceforge.net/projects/vcxsrv/files/vcxsrv/)からダウンロード。
+2. .exeファイルを実行。
+3. コンポーネントの選択。デスクトップへのショートカットを外した。
+4. インストール先を指定。初期設定で問題なし。
+5. Close で終了。
+6. スタートメニューで vcxsrv を検索すれば起動できる。
+7. タスクバーの通知領域を開くことで VcXsrv が常駐していることが確認できる。
 
 ## ソフトウェアのインストール
 
