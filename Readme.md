@@ -1,5 +1,5 @@
 # 環境構築
-Windows 10 Fall Creators Update 上でC言語とTeXの環境構築をした記録です。
+Windows 10 Fall Creators Update 上でC言語とTeXの環境構築をした記録です。(2018年3月1日)
 
 ## Windows Subsystem for Linux の有効化と Ubuntu のインストール
 
@@ -10,7 +10,6 @@ Windows 10 Fall Creators Update 上でC言語とTeXの環境構築をした記�
 5. Ubuntu を選択し、[入手]をクリックしてインストールした後、[起動]をクリックして起動する。
 6. ユーザー名とパスワードを入力する。
 
-
 参考文献: 
 - [WSL(Windows Subsystem for Linux)を使ってみた](https://qiita.com/Brutus/items/f26af71d3cc6f50d1640)
 - [Cygwin絶対殺すマン ～物理のオタクがWindows Subsystem for Linuxで数値計算できるようになるまで～](https://qiita.com/PikkamanV/items/d308927c395d6e687a6a)
@@ -20,5 +19,18 @@ Windows 10 Fall Creators Update 上でC言語とTeXの環境構築をした記�
 - [お前らのWSLはそれじゃダメだ](http://xztaityozx.hatenablog.com/entry/2017/12/01/001544)
 
 ## Visial Studio Code のインストール
+
+エディタには Visual Studio Code を使います。執筆時点での最新バージョンは1.20.1です。
+
+1. (https://code.visualstudio.com/)からインストール。
+2. .exeファイルを実行。
+3. [次へ]
+4. [同意する]にチェックを入れて[次へ]
+5. インストール先を入力。初期設定で問題なし。
+6. スタートメニューにショートカットを作成。初期設定で問題なし。
+7. 追加のタスクを選択。PATH だけでよい(?)。
+8. インストール
+9. 完了
+
 
 ## Git for Windows のインストール
