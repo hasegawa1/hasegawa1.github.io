@@ -221,7 +221,7 @@ terminal.integrated.shell.windows
 ```
 と検索し、terminal.integrated.shell.windows の部分にカーソルを合わせると、ペンのマークが出てくるのでそれをクリック。右のタブに移るので、
 ```
-terminal.integrated.shell.windows": "C:\\"自分のユーザ名"\\System32\\bash.exe
+terminal.integrated.shell.windows": "C:\\Windows\\System32\\bash.exe
 ```
 というように書くとLinuxを起動させるようになる。
 
