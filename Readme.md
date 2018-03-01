@@ -44,14 +44,14 @@ Linux の命令を使うために WSL を導入します。仮想環境などの
 3. ライセンスを確認して Next。
 4. インストール先を指定。初期設定で問題なし。
 5. コンポーネントの設定
-- Additional Icons - On the Desktop <br>
-    アイコンをデスクトップに置く設定。不要なのでチェックを外す。
-- Windows Explorer Integration <br>
-    ファイルやディレクトリを右クリックしたときのメニューに追加するかの設定。不要なのでチェックを外す。
-- Git LFS <br>
-    使うのでチェック。
-- Use a TrueType font in all console windows <br>
-    文字化けが起きるのでチェックを外す。 
+    - Additional Icons - On the Desktop
+        - アイコンをデスクトップに置く設定。不要なのでチェックを外す。
+    - Windows Explorer Integration
+        - ファイルやディレクトリを右クリックしたときのメニューに追加するかの設定。不要なのでチェックを外す。
+    - Git LFS
+        - 使うのでチェック。
+    - Use a TrueType font in all console windows
+        - 文字化けが起きるのでチェックを外す。 
 6. スタートメニューにショートカットを作成。初期設定で問題なし。
 7. デフォルトのエディターを聞かれる。Visual Studio Code を選択。
 8. 環境変数の設定
@@ -61,7 +61,7 @@ Linux の命令を使うために WSL を導入します。仮想環境などの
     コマンドプロンプトやPowerShellからGitのコマンドだけが使用できるように。
 - Use Git and included Unix tools from the Windows Command Prompt <br>
     gitだけでなく、他のlsやlessなどをコマンドプロンプトやPowerShellから使用可能になります。 
-    
+
 今回はデフォルトのまま進める。
 9. SSLライブラリの選択。初期設定で問題なし。
 10. 改行の取り扱いの設定
