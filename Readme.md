@@ -166,7 +166,7 @@ sudo apt install gnuplot-x11
 ## ターミナルの設定
 
 ### Tilix のインストール
-Terminal として [Tilix](https://gnunn1.github.io/tilix-web/) を使う。まずはインストール。
+ターミナルとして [Tilix](https://gnunn1.github.io/tilix-web/) を使う。まずはインストール。
 ```
 sudo add-apt-repository ppa:webupd8team/terminix
 sudo apt update
@@ -213,3 +213,16 @@ GTK_THEME=OSX-Arc-Shadow tilix
 - [お前らのWSLはそれじゃダメだ](http://xztaityozx.hatenablog.com/entry/2017/12/01/001544)
 - [Windows10でWSLとVSCodeを使ってプログラミング環境を整える](https://qiita.com/yokanyukari/items/37421f497b7ffaa75502)
 - [Tilix - GNOME HIGに準拠したタイル型ターミナルエミュレータ](https://ubuntuapps.blog.fc2.com/blog-entry-973.html)
+
+## VSCode の統合ターミナルを WSL に設定する
+VSCode では`Ctrl+@`で統合ターミナルが起動できる。初期設定では PowerShell になっているが、これを WSL に変更する。ファイル＞基本設定＞設定 とクリックしていくとユーザー設定が出てくる。上部の検索バーで
+```
+terminal.integrated.shell.windows
+```
+と検索し、terminal.integrated.shell.windows の部分にカーソルを合わせると、ペンのマークが出てくるのでそれをクリック。右のタブに移るので、
+```
+terminal.integrated.shell.windows": "C:\\"自分のユーザ名"\\System32\\bash.exe
+```
+というように書くとLinuxを起動させるようになる。
+
+## VSCode の拡張機能
