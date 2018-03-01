@@ -164,15 +164,19 @@ sudo apt install gnuplot-x11
 - [「Windows Subsystem for Linux(WSL)」セットアップガイド【スクリーンショットつき解説】](https://linuxfan.info/wsl-setup-guide)
 
 ## ターミナルの設定
+
+### Tilix のインストール
 Terminal として [Tilix](https://gnunn1.github.io/tilix-web/) を使う。まずはインストール。
 ```
+sudo add-apt-repository ppa:webupd8team/terminix
+sudo apt update
 sudo apt install tilix
 ```
-また、日本語入力ができるよう umi もインストールする。
+また、日本語入力ができるよう uim もインストールする。
 ```
 sudo apt install uim-fep uim-anthy
 ```
-次に、 umi の設定を書く。
+次に、 uim の設定を書く。
 ```
 cat << EOF > ~/.uim
 (define default-im-name 'anthy)
@@ -187,7 +191,25 @@ export DISPLAY=:0.0
 gnome-terminal -e uim-fep
 ```
 
+### ショートカットの作成
+
+### テーマの設定
+[www.gnome-look.org](www.gnome-look.org) で好きなテーマを探す。今回は OSX-Arc を適用する。
+```
+mkdir ~/tmp
+cd tmp
+wget https://github.com/LinxGem33/OSX-Arc-Darker/releases/download/v1.4.5/osx-arc-collection_1.4.5_amd64.deb
+sudo dpkg --install ./osx-arc-collection_1.4.5_amd64.deb
+rm ./osx-arc-collection_1.4.5_amd64.deb
+```
+テーマを適用する。
+```
+GTK_THEME=OSX-Arc-Shadow tilix
+```
+この辺りはうまくいかなかったので調べる必要有り。
+
 参考文献：
 - [最高のBoW(Bash on Ubuntu on Windows)環境のために](http://mjhd.hatenablog.com/entry/2016/11/27/185902)
 - [お前らのWSLはそれじゃダメだ](http://xztaityozx.hatenablog.com/entry/2017/12/01/001544)
 - [Windows10でWSLとVSCodeを使ってプログラミング環境を整える](https://qiita.com/yokanyukari/items/37421f497b7ffaa75502)
+- [Tilix - GNOME HIGに準拠したタイル型ターミナルエミュレータ](https://ubuntuapps.blog.fc2.com/blog-entry-973.html)
