@@ -54,36 +54,69 @@ Linux の命令を使うために WSL を導入します。仮想環境などの
         - 文字化けが起きるのでチェックを外す。 
 6. スタートメニューにショートカットを作成。初期設定で問題なし。
 7. デフォルトのエディターを聞かれる。Visual Studio Code を選択。
-8. 環境変数の設定
+8. 環境変数の設定。今回はデフォルトのまま進める。
     - Use Git Bash only
         - 環境変数を汚さない。Cygwin等を導入している場合はこれ。
     - Use Git from the Windows Command Prompt
         - コマンドプロンプトやPowerShellからGitのコマンドだけが使用できるように。
     - Use Git and included Unix tools from the Windows Command Prompt
         - gitだけでなく、他のlsやlessなどをコマンドプロンプトやPowerShellから使用可能になります。 
-    今回はデフォルトのまま進める。
 9. SSLライブラリの選択。初期設定で問題なし。
-10. 改行の取り扱いの設定
+10. 改行の取り扱いの設定。今回はデフォルトのまま進める。
     - Checkout Windows-style, commit Unix-style line endings
         - チェックアウト時に改行コードはCR LFに変更され、コミット時には全てLFに変換される。
     - Checkout as-is, commit Unix-style line endings
         - チェックアウト時は改行コードについては何もしない、コミット時には全てLFに変換される。
     - Checkout as-is, commit as-is
         - 改行コードについては何もしない。
-    今回はデフォルトのまま進める。
 11. Gitで使用するコンソールをCygwinで使用されているMinTTYを使用するか、Windowsの標準コンソールを使用するか選択。Windowsの標準コンソールを選択。
-12. gitconfigについての設定
+12. gitconfigについての設定。とりあえずデフォルトのまま進める。
     - Enable file system caching
         - git status時などでの応答速度を改善するfscacheキャッシュを有効にするかしないかオプション
     - Enable Git Credential Manager
         - GitHub等にアクセスする際の二段階認証に対応するかのオプション
     - Enable symbolic links
         - シンボリックリンクの使用/不使用のオプション 
-    とりあえずデフォルトのまま進める。
 13. Install をクリックするとインストール開始。
 14. Finish で完了。
 
 参考文献: 
 - [自分用 Git For Windowsのインストール手順](https://qiita.com/toshi-click/items/dcf3dd48fdc74c91b409)
 - [こっそり始めるGit／GitHub超入門](http://www.atmarkit.co.jp/ait/series/3190/)
+- [今日からはじめるGitHub 〜 初心者がGitをインストールして、プルリクできるようになるまでを解説](https://employment.en-japan.com/engineerhub/entry/2017/01/31/110000#%E7%92%B0%E5%A2%83%E3%81%AE%E6%A7%8B%E7%AF%892-SSH%E3%81%AE%E9%8D%B5%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B)
 
+## ソフトウェアのインストール
+
+### パッケージのアップデート
+```
+sudo apt update
+sudo apt upgrade
+```
+
+### gcc
+```
+sudo apt install build-essential
+or
+sudo apt install gcc
+```
+
+### Git
+```
+sudo apt install git
+```
+
+### LaTeX
+```
+sudo apt install texlive-full
+```
+
+### Emacs
+```
+sudo apt install emacs
+```
+
+### Gnuplot
+```
+sudo apt install gnuplot-x11
+```
+-x11 をつけないと terminal の設定がうまくいかないらしい。
