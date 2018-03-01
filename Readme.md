@@ -18,7 +18,7 @@ Linux の命令を使うために WSL を導入します。仮想環境などの
 - [Windows10でWSLとVSCodeを使ってプログラミング環境を整える](https://qiita.com/yokanyukari/items/37421f497b7ffaa75502)
 - [Visual Studio CodeでWSLのgitを利用してソース管理を行う](https://qiita.com/xeres/items/ed4d659cfac4a1695f4b)
 - [Windows Subsystem for Linux + X Windowを1.024倍くらい使いこなすための方法](https://qiita.com/nishemon/items/bb3aca972404f68bfcd6)
-- [お前らのWSLはそれじゃダメだ](http://xztaityozx.hatenablog.com/entry/2017/12/01/001544)
+
 
 ## Visial Studio Code のインストール
 
@@ -87,6 +87,12 @@ Linux の命令を使うために WSL を導入します。仮想環境などの
 
 ## ソフトウェアのインストール
 
+### ダウンロードサーバーの変更
+```
+sudo sed -i 's/\/archive\.ubuntu/\/jp\.archive\.ubuntu/' /etc/apt/sources.list
+```
+デフォルトでは、ソフトウェアパッケージのダウンロード元が海外にあるメインサーバーに設定されている。これを、日本のサーバーに変更して早くダウンロードできるようにする。以上のコマンドを実行すると、/etc/apt/sources.list が書き換わる。
+
 ### パッケージ情報の更新
 ```
 sudo apt update
@@ -96,14 +102,27 @@ sudo apt update
 ### パッケージの更新
 ```
 sudo apt upgrade
+or
+sudo apt full-upgrade
 ```
-アップグレード可能なパッケージを更新します。full-upgrade は、「保留」とされるパッケージがある場合に実行する。すると、パッケージを削除しないと更新できないパッケージも処理できる。
+アップグレード可能なパッケージを更新する。full-upgrade は、「保留」とされるパッケージがある場合に実行する。すると、パッケージを削除しないと更新できないパッケージも処理できる。
+
+### 日本語化
+```
+sudo apt install language-pack-ja
+sudo update-locale LANG=ja_JP.UTF-8
+```
 
 ### gcc
 ```
 sudo apt install build-essential
 or
 sudo apt install gcc
+```
+
+### gfortran
+```
+sudo apt install gfortean
 ```
 
 ### Git
@@ -132,5 +151,11 @@ sudo apt install gnuplot-x11
 - [Bash on Ubuntu on Windows上でTeXLiveのコンパイル&プレビュー環境を構築する（その1）](https://qiita.com/kuro_23/items/6bb7e3d470d04209bd03)
 - [Cygwin絶対殺すマン ～物理のオタクがWindows Subsystem for Linuxで数値計算できるようになるまで～](https://qiita.com/PikkamanV/items/d308927c395d6e687a6a)
 - [「apt-get」はもう古い？新しい「apt」コマンドを使ったUbuntuのパッケージ管理](https://linuxfan.info/package-management-ubuntu)
+- [「Windows Subsystem for Linux(WSL)」セットアップガイド【スクリーンショットつき解説】](https://linuxfan.info/wsl-setup-guide)
 
 ## ターミナルの設定
+
+参考文献：
+- [最高のBoW(Bash on Ubuntu on Windows)環境のために](http://mjhd.hatenablog.com/entry/2016/11/27/185902)
+- [お前らのWSLはそれじゃダメだ](http://xztaityozx.hatenablog.com/entry/2017/12/01/001544)
+- [Windows10でWSLとVSCodeを使ってプログラミング環境を整える](https://qiita.com/yokanyukari/items/37421f497b7ffaa75502)
