@@ -87,11 +87,17 @@ Linux の命令を使うために WSL を導入します。仮想環境などの
 
 ## ソフトウェアのインストール
 
-### パッケージのアップデート
+### パッケージ情報の更新
 ```
 sudo apt update
+```
+パッケージのリポジトリから、パッケージの名前やバージョン、依存関係を取得するコマンド。このコマンドで/var/lib/apt以下にあるパッケージ情報が更新される。この情報を元に、パッケージのダウンロードが行われる。Ubuntuを普通にインストールすると定期的に自動で実行されるが、パッケージの更新やインストール前に手動で実行しておくと良い。
+
+### パッケージの更新
+```
 sudo apt upgrade
 ```
+アップグレード可能なパッケージを更新します。full-upgrade は、「保留」とされるパッケージがある場合に実行する。すると、パッケージを削除しないと更新できないパッケージも処理できる。
 
 ### gcc
 ```
@@ -125,3 +131,6 @@ sudo apt install gnuplot-x11
 - [Windows Subsystem for Linuxをインストールしてみよう！](https://qiita.com/Aruneko/items/c79810b0b015bebf30bb)
 - [Bash on Ubuntu on Windows上でTeXLiveのコンパイル&プレビュー環境を構築する（その1）](https://qiita.com/kuro_23/items/6bb7e3d470d04209bd03)
 - [Cygwin絶対殺すマン ～物理のオタクがWindows Subsystem for Linuxで数値計算できるようになるまで～](https://qiita.com/PikkamanV/items/d308927c395d6e687a6a)
+- [「apt-get」はもう古い？新しい「apt」コマンドを使ったUbuntuのパッケージ管理](https://linuxfan.info/package-management-ubuntu)
+
+## ターミナルの設定
