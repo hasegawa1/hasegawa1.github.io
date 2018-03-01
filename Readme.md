@@ -1,9 +1,7 @@
-# マークダウンで書いたページ
+# 環境構築
+Windows 10 Fall Creators Update　上でC言語とTeXの環境構築をします。
 
-人生は、生きてるだけで丸儲け、争わない、楽しみ、チャレンジするそれで、人の役に立てれば最高!
-
-
-## 中野信子氏「生きてるだけで丸儲け」は生物学的にも正しい
+## Windows Subsystem for Linux の有効化と Ubuntu のインストール
 
 脳科学を通して伝えたいことはシンプルで「生きている者が勝ち！」ということです。
 
@@ -16,3 +14,7 @@
 おまけの人生ですから、楽しんでいただきたい。
 
 抜粋 引用元: http://enrique5581.net/nakano-nobuko-life-brain/
+
+## Visial Studio Code のインストール
+
+## Git for Windows のインストール
