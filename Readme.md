@@ -19,71 +19,6 @@ Linux の命令を使うために WSL を導入します。仮想環境などの
 - [Visual Studio CodeでWSLのgitを利用してソース管理を行う](https://qiita.com/xeres/items/ed4d659cfac4a1695f4b)
 - [Windows Subsystem for Linux + X Windowを1.024倍くらい使いこなすための方法](https://qiita.com/nishemon/items/bb3aca972404f68bfcd6)
 
-
-## Visial Studio Code のインストール
-エディタには Visual Studio Code を使う。執筆時点での最新バージョンは1.20.1。このバージョンから Python のディストリビューション Anaconda と同時インストールができるようになった。Python も使う場合はそれを利用するのがよい。
-
-1. [https://code.visualstudio.com/](https://code.visualstudio.com/)からダウンロード。
-2. .exeファイルを実行。
-3. [次へ]
-4. [同意する]にチェックを入れて[次へ]
-5. インストール先を指定。初期設定で問題なし。
-6. スタートメニューにショートカットを作成。初期設定で問題なし。
-7. 追加のタスクを選択。PATH だけでよい(?)。
-8. インストール
-9. 完了
-
-
-## Git for Windows のインストール
-
-分散型バージョン管理システムの Git をインストールします。wslgit なるものもあります。執筆時点での最新バージョンは2.16.2。
-
-1. [https://git-scm.com/](https://git-scm.com/)からダウンロード。
-2. .exeファイルを実行。
-3. ライセンスを確認して Next。
-4. インストール先を指定。初期設定で問題なし。
-5. コンポーネントの設定
-    - Additional Icons - On the Desktop
-        - アイコンをデスクトップに置く設定。不要なのでチェックを外す。
-    - Windows Explorer Integration
-        - ファイルやディレクトリを右クリックしたときのメニューに追加するかの設定。不要なのでチェックを外す。
-    - Git LFS
-        - 使うのでチェック。
-    - Use a TrueType font in all console windows
-        - 文字化けが起きるのでチェックを外す。 
-6. スタートメニューにショートカットを作成。初期設定で問題なし。
-7. デフォルトのエディターを聞かれる。Visual Studio Code を選択。
-8. 環境変数の設定。今回はデフォルトのまま進める。
-    - Use Git Bash only
-        - 環境変数を汚さない。Cygwin等を導入している場合はこれ。
-    - Use Git from the Windows Command Prompt
-        - コマンドプロンプトやPowerShellからGitのコマンドだけが使用できるように。
-    - Use Git and included Unix tools from the Windows Command Prompt
-        - gitだけでなく、他のlsやlessなどをコマンドプロンプトやPowerShellから使用可能になります。 
-9. SSLライブラリの選択。初期設定で問題なし。
-10. 改行の取り扱いの設定。今回はデフォルトのまま進める。
-    - Checkout Windows-style, commit Unix-style line endings
-        - チェックアウト時に改行コードはCR LFに変更され、コミット時には全てLFに変換される。
-    - Checkout as-is, commit Unix-style line endings
-        - チェックアウト時は改行コードについては何もしない、コミット時には全てLFに変換される。
-    - Checkout as-is, commit as-is
-        - 改行コードについては何もしない。
-11. Gitで使用するコンソールをCygwinで使用されているMinTTYを使用するか、Windowsの標準コンソールを使用するか選択。Windowsの標準コンソールを選択。
-12. gitconfigについての設定。とりあえずデフォルトのまま進める。
-    - Enable file system caching
-        - git status時などでの応答速度を改善するfscacheキャッシュを有効にするかしないかオプション
-    - Enable Git Credential Manager
-        - GitHub等にアクセスする際の二段階認証に対応するかのオプション
-    - Enable symbolic links
-        - シンボリックリンクの使用/不使用のオプション 
-13. Install をクリックするとインストール開始。
-14. Finish で完了。
-
-参考文献: 
-- [自分用 Git For Windowsのインストール手順](https://qiita.com/toshi-click/items/dcf3dd48fdc74c91b409)
-- [こっそり始めるGit／GitHub超入門](http://www.atmarkit.co.jp/ait/series/3190/)
-- [今日からはじめるGitHub 〜 初心者がGitをインストールして、プルリクできるようになるまでを解説](https://employment.en-japan.com/engineerhub/entry/2017/01/31/110000#%E7%92%B0%E5%A2%83%E3%81%AE%E6%A7%8B%E7%AF%892-SSH%E3%81%AE%E9%8D%B5%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B)
-
 ## VcXsrv のインストール
 Windows 用の X Server の VcXsrv をインストールする。Xming は寄付版ならまだいいらしい。執筆時点での最新バージョンは1.19.6.0。
 
@@ -95,7 +30,7 @@ Windows 用の X Server の VcXsrv をインストールする。Xming は寄付
 6. スタートメニューで vcxsrv を検索すれば起動できる。
 7. タスクバーの通知領域を開くことで VcXsrv が常駐していることが確認できる。
 
-## ソフトウェアのインストール
+## シェルの基本設定
 
 ### ダウンロードサーバーの変更
 ```
@@ -123,43 +58,8 @@ sudo apt install language-pack-ja
 sudo update-locale LANG=ja_JP.UTF-8
 ```
 
-### gcc
-```
-sudo apt install build-essential
-or
-sudo apt install gcc
-```
-
-### gfortran
-```
-sudo apt install gfortean
-```
-
-### Git
-```
-sudo apt install git
-```
-
-### LaTeX
-```
-sudo apt install texlive-full
-```
-
-### Emacs
-```
-sudo apt install emacs
-```
-
-### Gnuplot
-```
-sudo apt install gnuplot-x11
-```
--x11 をつけないと terminal の設定がうまくいかないらしい。
-
 参考文献：
 - [Windows Subsystem for Linuxをインストールしてみよう！](https://qiita.com/Aruneko/items/c79810b0b015bebf30bb)
-- [Bash on Ubuntu on Windows上でTeXLiveのコンパイル&プレビュー環境を構築する（その1）](https://qiita.com/kuro_23/items/6bb7e3d470d04209bd03)
-- [Cygwin絶対殺すマン ～物理のオタクがWindows Subsystem for Linuxで数値計算できるようになるまで～](https://qiita.com/PikkamanV/items/d308927c395d6e687a6a)
 - [「apt-get」はもう古い？新しい「apt」コマンドを使ったUbuntuのパッケージ管理](https://linuxfan.info/package-management-ubuntu)
 - [「Windows Subsystem for Linux(WSL)」セットアップガイド【スクリーンショットつき解説】](https://linuxfan.info/wsl-setup-guide)
 
@@ -214,16 +114,120 @@ GTK_THEME=OSX-Arc-Shadow tilix
 - [Windows10でWSLとVSCodeを使ってプログラミング環境を整える](https://qiita.com/yokanyukari/items/37421f497b7ffaa75502)
 - [Tilix - GNOME HIGに準拠したタイル型ターミナルエミュレータ](https://ubuntuapps.blog.fc2.com/blog-entry-973.html)
 
+## Visial Studio Code のインストール
+エディタには Visual Studio Code を使う。執筆時点での最新バージョンは1.20.1。このバージョンから Python のディストリビューション Anaconda と同時インストールができるようになった。Python も使う場合はそれを利用するのがよい。
+
+1. [https://code.visualstudio.com/](https://code.visualstudio.com/)からダウンロード。
+2. .exeファイルを実行。
+3. [次へ]
+4. [同意する]にチェックを入れて[次へ]
+5. インストール先を指定。初期設定で問題なし。
+6. スタートメニューにショートカットを作成。初期設定で問題なし。
+7. 追加のタスクを選択。PATH だけでよい(?)。
+8. インストール
+9. 完了
+
+
+## Git for Windows のインストール
+
+分散型バージョン管理システムの Git をインストールします。wslgit なるものもあります。執筆時点での最新バージョンは2.16.2。飛ばしてよい。
+
+1. [https://git-scm.com/](https://git-scm.com/)からダウンロード。
+2. .exeファイルを実行。
+3. ライセンスを確認して Next。
+4. インストール先を指定。初期設定で問題なし。
+5. コンポーネントの設定
+    - Additional Icons - On the Desktop
+        - アイコンをデスクトップに置く設定。不要なのでチェックを外す。
+    - Windows Explorer Integration
+        - ファイルやディレクトリを右クリックしたときのメニューに追加するかの設定。不要なのでチェックを外す。
+    - Git LFS
+        - 使うのでチェック。
+    - Use a TrueType font in all console windows
+        - 文字化けが起きるのでチェックを外す。 
+6. スタートメニューにショートカットを作成。初期設定で問題なし。
+7. デフォルトのエディターを聞かれる。Visual Studio Code を選択。
+8. 環境変数の設定。今回はデフォルトのまま進める。
+    - Use Git Bash only
+        - 環境変数を汚さない。Cygwin等を導入している場合はこれ。
+    - Use Git from the Windows Command Prompt
+        - コマンドプロンプトやPowerShellからGitのコマンドだけが使用できるように。
+    - Use Git and included Unix tools from the Windows Command Prompt
+        - gitだけでなく、他のlsやlessなどをコマンドプロンプトやPowerShellから使用可能になります。 
+9. SSLライブラリの選択。初期設定で問題なし。
+10. 改行の取り扱いの設定。今回はデフォルトのまま進める。
+    - Checkout Windows-style, commit Unix-style line endings
+        - チェックアウト時に改行コードはCR LFに変更され、コミット時には全てLFに変換される。
+    - Checkout as-is, commit Unix-style line endings
+        - チェックアウト時は改行コードについては何もしない、コミット時には全てLFに変換される。
+    - Checkout as-is, commit as-is
+        - 改行コードについては何もしない。
+11. Gitで使用するコンソールをCygwinで使用されているMinTTYを使用するか、Windowsの標準コンソールを使用するか選択。Windowsの標準コンソールを選択。
+12. gitconfigについての設定。とりあえずデフォルトのまま進める。
+    - Enable file system caching
+        - git status時などでの応答速度を改善するfscacheキャッシュを有効にするかしないかオプション
+    - Enable Git Credential Manager
+        - GitHub等にアクセスする際の二段階認証に対応するかのオプション
+    - Enable symbolic links
+        - シンボリックリンクの使用/不使用のオプション 
+13. Install をクリックするとインストール開始。
+14. Finish で完了。
+
+参考文献: 
+- [自分用 Git For Windowsのインストール手順](https://qiita.com/toshi-click/items/dcf3dd48fdc74c91b409)
+- [こっそり始めるGit／GitHub超入門](http://www.atmarkit.co.jp/ait/series/3190/)
+- [今日からはじめるGitHub 〜 初心者がGitをインストールして、プルリクできるようになるまでを解説](https://employment.en-japan.com/engineerhub/entry/2017/01/31/110000#%E7%92%B0%E5%A2%83%E3%81%AE%E6%A7%8B%E7%AF%892-SSH%E3%81%AE%E9%8D%B5%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B)
+
 ## VSCode の統合ターミナルを WSL に設定する
-VSCode では`Ctrl+@`で統合ターミナルが起動できる。初期設定では PowerShell になっているが、これを WSL に変更する。ファイル＞基本設定＞設定 とクリックしていくとユーザー設定が出てくる。上部の検索バーで
+VSCode では`Ctrl+@`で統合ターミナルが起動できる。初期設定では PowerShell になっているが、これを zsh に変更する。ファイル＞基本設定＞設定 とクリックしていくとユーザー設定が出てくる。上部の検索バーで
 ```
 terminal.integrated.shell.windows
 ```
-と検索し、terminal.integrated.shell.windows の部分にカーソルを合わせると、ペンのマークが出てくるのでそれをクリック。右のタブに移るので、
+と検索し、terminal.integrated.shell.windows の部分にカーソルを合わせると、ペンのマークが出てくるので[設定をコピー]をクリック。右のタブに移るので、
 ```
 terminal.integrated.shell.windows": "C:\\Windows\\System32\\bash.exe
 ```
-というように書くとLinuxを起動させるようになる。
+というように書くと zsh を起動させるようになる。
+
+# ソフトウェアのインストール
+
+### gcc
+```
+sudo apt install build-essential
+or
+sudo apt install gcc
+```
+
+### gfortran
+```
+sudo apt install gfortean
+```
+
+### Git
+```
+sudo apt install git
+```
+
+### LaTeX
+```
+sudo apt install texlive-full
+```
+
+### Emacs
+```
+sudo apt install emacs
+```
+
+### Gnuplot
+```
+sudo apt install gnuplot-x11
+```
+-x11 をつけないと terminal の設定がうまくいかないらしい。
+
+参考文献：
+- [Windows Subsystem for Linuxをインストールしてみよう！](https://qiita.com/Aruneko/items/c79810b0b015bebf30bb)
+- [Bash on Ubuntu on Windows上でTeXLiveのコンパイル&プレビュー環境を構築する（その1）](https://qiita.com/kuro_23/items/6bb7e3d470d04209bd03)
+- [Cygwin絶対殺すマン ～物理のオタクがWindows Subsystem for Linuxで数値計算できるようになるまで～](https://qiita.com/PikkamanV/items/d308927c395d6e687a6a)
 
 ## VSCode の拡張機能
 - C/C++の拡張
