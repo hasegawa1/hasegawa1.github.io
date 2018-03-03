@@ -140,7 +140,7 @@ GTK_THEME=OSX-Arc-Shadow tilix
 - [Windows10でWSLとVSCodeを使ってプログラミング環境を整える](https://qiita.com/yokanyukari/items/37421f497b7ffaa75502)
 - [Tilix - GNOME HIGに準拠したタイル型ターミナルエミュレータ](https://ubuntuapps.blog.fc2.com/blog-entry-973.html)
 
-## Visial Studio Code のインストール
+## Visual Studio Code のインストール
 エディタには Visual Studio Code を使う。執筆時点での最新バージョンは1.20.1。このバージョンから Python のディストリビューション Anaconda と同時インストールができるようになった。Python も使う場合はそれを利用するのがよい。
 
 1. [https://code.visualstudio.com/](https://code.visualstudio.com/)からダウンロード。
@@ -355,6 +355,7 @@ endlocal
 |echo|文字列の表示|
 |cat|ファイルの中身を表示|
 |diff|2つのファイルの差分を表示|
+|tar|圧縮 tar -cvzf ooo.tgz directory<br>解凍 tar -xvzf ooo.tgz|
 
 # C言語と数値計算
 
