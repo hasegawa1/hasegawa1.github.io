@@ -380,6 +380,49 @@ endlocal
 - [VSCode用に表示中のコードを印刷できる拡張機能を作った](https://blog.bulkus.net/post/printcode/)
 
 ### LaTeX Workshop
+LuaLaTeX でコンパイルするために setting.json に以下を追加する。LuaJITLaTeXを利用する場合は適宜JITを書き足せばよい。
+```json
+"latex-workshop.latex.toolchain": [
+    {
+        "command": "lualatex",
+        "args": [
+            "--cmdx",
+            "--fmt=lualatex.fmt",
+            "%DOCFILE%"
+        ]
+    }
+]
+```
+これで .tex を保存すれば自動的にコンパイルされるようになる。`Ctrl+Alt+L`でLaTeX Workshop Actions が開く。主なアクションは
+Build Latex Project
+: latex-workshop.latex.toolchainにある一連のコマンドを実行。
+
+View PDF file in new tab
+: VScodeのnew tabでPDFを開く。`Ctrl+L+T`
+
+SyncTeX from Cursor
+: SyncTeXの機能を使用して、文字をPDFに合わす。
+
+Clean up auxiliary files
+: auxiliaryファイルを削除する。
+
+Count words in LaTeX document
+: 文字数をカウントしする。句読点、節の見出しなどはカウントされないらしい。
+
+主な設定項目を挙げる。setting.json に追記すればよい。自分はファイルの自動削除を設定。
+- 自動コンパイルのキャンセル
+```json
+"latex-workshop.latex.autoBuild.onSave.enabled": false,
+```
+- Auxiliaryファイルの自動削除
+```json
+"latex-workshop.latex.clean.enabled": true,
+```
+- ChkTeXによる構文チェック
+```json
+"latex-workshop.chktex.enabled": true,
+```
+
 ### Git Lens
 
 # Linux の操作
