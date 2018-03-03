@@ -510,7 +510,6 @@ int main (void) {
     printf("Hello World!\n");
 }
 EOF
-ls
 gcc hello.c -o hello.out;
 ls
 ./hello.out
