@@ -307,22 +307,21 @@ ext install runner
 などとしてもよい。
 
 C/C++の拡張
-
 : C/C++
+
 コードの整形
-
 : Beautify
+
 コードの自動実行
-
 : Runner
+
 コードの印刷
-
 : PrintCode
+
 LaTeX を使う
-
 : LaTeX Workshop
-Git を使う
 
+Git を使う
 : Git Lens
 
 ### C/C++
@@ -483,3 +482,11 @@ gcc hello.c -o hello.out;
 # Gnuplot で描画
 
 # TeX で文書作成
+
+## tex とその歴史
+
+## LuaTeX-ja とその設定
+
+## テンプレート
+
+## よく使う命令
