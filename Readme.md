@@ -394,6 +394,7 @@ LuaLaTeX でコンパイルするために setting.json に以下を追加する
 ]
 ```
 これで .tex を保存すれば自動的にコンパイルされるようになる。`Ctrl+Alt+L`でLaTeX Workshop Actions が開く。主なアクションは
+
 Build Latex Project
 : latex-workshop.latex.toolchainにある一連のコマンドを実行。
 
@@ -422,6 +423,10 @@ Count words in LaTeX document
 ```json
 "latex-workshop.chktex.enabled": true,
 ```
+
+参考文献：
+- [VS CodeでTeXを使う方法](http://elecho.hatenablog.com/entry/2017/04/27/175500)
+- [VScodeで快適LaTeX環境を構築する方法](https://qiita.com/ichigism/items/707e8a5def368a69e9a6)
 
 ### Git Lens
 
@@ -497,20 +502,20 @@ ps aux | grep apache | sort -r | tee apache.txt
 とりあえずいつものやつ。VSCode の統合ターミナルでやってみる。
 ```bash
 cd /mnt/c
-mkdir git
-cd git
-mkdir hello
-cd hello
+mkdir -p git/hello
+cd git/hello
 cat <<EOF > hello.c
 #include <stdio.h>
 int main (void) {
-    printf("Hello World!!\n");
+    printf("Hello World!\n");
 }
 EOF
+ls
 gcc hello.c -o hello.out;
+ls
 ./hello.out
 ```
-ターミナルに`Hello World!!`と表示されればOK。
+ターミナルに`Hello World!`と表示されればOK。
 
 ## Euler 法
 
