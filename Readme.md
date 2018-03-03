@@ -308,7 +308,7 @@ gcc -lm -o %tempfile%.out "%1"
 del %tempfile%.out
 endlocal
 ```
-```bash:
+```bash
 // cpprun.bat
 @echo off
 
@@ -344,7 +344,6 @@ endlocal
 とりあえず超基本的なものだけ。
 
 |コマンド|実行内容|
-|:=:|:=:|
 |pwd|現在のディレクトリを表示|
 |ls|現在のディレクトリの中身を表示|
 |mkdir|ディレクトリを作成|
@@ -358,6 +357,25 @@ endlocal
 |diff|2つのファイルの差分を表示|
 
 # C言語と数値計算
+
+## テスト
+とりあえずいつものやつ。VSCode の統合ターミナルでやってみる。
+```bash
+cd /mnt/c
+mkdir git
+cd git
+mkdir hello
+cd hello
+cat <<EOF > hello.c
+#include <stdio.h>
+int main (void) {
+    printf("Hello World!!\n")
+}
+EOF
+gcc hello.c -o hello.out;
+./hello.out
+```
+ターミナルに`Hello World!!`と表示されればOK。
 
 # Gnuplot で描画
 
