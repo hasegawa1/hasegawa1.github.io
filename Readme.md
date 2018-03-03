@@ -34,7 +34,7 @@ Windows 用の X Server の VcXsrv をインストールする。Xming は寄付
 
 ### ダウンロードサーバーの変更
 ```
-sudo sed -i 's/\/archive\.ubuntu/\/jp\.archive\.ubuntu/' /etc/apt/sources.list
+$ sudo sed -i.bak -e "s%http://us.archive.ubuntu.com/ubuntu/%http://ftp.jaist.ac.jp/pub/Linux/ubuntu/%g" /etc/apt/sources.list
 ```
 デフォルトでは、ソフトウェアパッケージのダウンロード元が海外にあるメインサーバーに設定されている。これを、日本のサーバーに変更して早くダウンロードできるようにする。以上のコマンドを実行すると、/etc/apt/sources.list が書き換わる。
 
@@ -52,16 +52,43 @@ sudo apt full-upgrade
 ```
 アップグレード可能なパッケージを更新する。full-upgrade は、「保留」とされるパッケージがある場合に実行する。すると、パッケージを削除しないと更新できないパッケージも処理できる。
 
+### タイムゾーンの設定
+初期状態では、Ubuntu 内のタイムゾーンが DST となっている。これを日本標準時にするには、以下のコマンドを実行する。
+```
+sudo dpkg-reconfigure tzdata
+```
+パスワードを要求されるので、最初に設定したパスワードを入力してEnterを押す。カーソルキーで Asia > Tokyo を選択する。
+
 ### 日本語化
 ```
 sudo apt install language-pack-ja
 sudo update-locale LANG=ja_JP.UTF-8
 ```
+ここで、`date`コマンドを実行すると
+```
+2018年 3月 1日 金曜日 12:00:00 JST
+```
+のように表示される。
+
+### zsh の利用
+```
+sudo apt install zsh
+```
+でインストール。ここで、 ~/.bashrc を編集以下を書き足す。
+```
+if test -t 1; then
+ exec zsh
+fi 
+```
+これで zsh が起動できる。
 
 参考文献：
 - [Windows Subsystem for Linuxをインストールしてみよう！](https://qiita.com/Aruneko/items/c79810b0b015bebf30bb)
 - [「apt-get」はもう古い？新しい「apt」コマンドを使ったUbuntuのパッケージ管理](https://linuxfan.info/package-management-ubuntu)
 - [「Windows Subsystem for Linux(WSL)」セットアップガイド【スクリーンショットつき解説】](https://linuxfan.info/wsl-setup-guide)
+- [apt-getの利用リポジトリを日本サーバーに変更する](https://qiita.com/fkshom/items/53de3a9b9278cd524099)
+- [Running oh my zsh on Windows 10](https://winsmarts.com/running-oh-my-zsh-on-windows-10-6fcb0fbc736b)
+- [Run oh my zsh as integrated shell in VSCode on Windows](https://winsmarts.com/run-oh-my-zsh-as-integrated-shell-in-vscode-on-windows-7d69f72bafa3)
 
 ## ターミナルの設定
 
@@ -185,9 +212,10 @@ terminal.integrated.shell.windows
 ```
 と検索し、terminal.integrated.shell.windows の部分にカーソルを合わせると、ペンのマークが出てくるので[設定をコピー]をクリック。右のタブに移るので、
 ```
-terminal.integrated.shell.windows": "C:\\Windows\\System32\\bash.exe
+terminal.integrated.shell.windows": "C:\\Windows\\System32\\bash.exe,
+"terminal.integrated.shellArgs.windows": ["-c", "zsh"],
 ```
-というように書くと zsh を起動させるようになる。
+というように書くと zsh を起動させるようになる。上の行だけだと bash が起動する。
 
 # ソフトウェアのインストール
 
