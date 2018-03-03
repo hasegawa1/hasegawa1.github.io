@@ -490,7 +490,7 @@ gcc hello.c -o hello.out;
 1978年、Donald Knuth によって最初の TeX が作られた。TeX は tex 言語から DVI ファイルを生成できる。
 
 ### pTeX
-pTeX は TeX に縦書き組版、日本語禁則処理、日本語と欧文が混在した時の処理、などの日本語向けの様々な機能を追加した処理系である。理系の文書ではよくある日本語と欧文の混在も pTeX からサポートされている。
+pTeX は TeX に縦書き組版、日本語禁則処理、日本語と欧文が混在した時の処理、など日本語向けの機能を追加した処理系である。理系の文書ではよくある日本語と欧文の混在も pTeX からサポートされている。
 
 ### eTeX
 同時期に、レジスタ上限の増加、新たな条件式の追加、などの拡張が TeX に加えられて eTeX ができた。
@@ -508,13 +508,21 @@ XeTeX は eTeX を改造したものの一つで、Unicode への対応とフォ
 これも eTeX を改造したものの一つで、 DVI を経由せずに直接 PDF を生成する。欧米ではこれが主に用いられている。
 
 ### LuaTeX
-LuaTeX はpdfTeXの派生で、名前にある通り Lua のコードを TeX ファイルに入れることが出来る。pdfTeX と、内部エンコーディングを Unicode にした Omega という処理系の血統である。pdfTeX の後継ということがもう決定している。
+LuaTeX はpdfTeXの派生で、名前にある通り Lua のコードを TeX ファイルに入れることが出来る。pdfTeX と、内部エンコーディングを Unicode にした Omega という処理系の血統である。pdfTeX の後継になることがもう決定していて、将来的にはこれが普及する予定である。
 
 参考文献：
 - [TeX処理系御伽話](https://qiita.com/yyu/items/6404656f822ce14db935)
 - [日本人の知らないTeX - TeXの過去・現在・未来](https://oku.edu.mie-u.ac.jp/texconf10/presentations/yato.pdf)
 
-## LuaTeX-ja とその設定
+## LuaLaTeX-ja
+LuaTEX-ja パッケージの冒頭から引用
+> LuaTEX-ja パッケージは，次世代標準 TEX である LuaTEX の上で，pTEX と同等／それ以上の品質の日本語組版を実現させようとするマクロパッケージである．従来，「TEX を用いて日本語組版を行う」といったとき，エンジンとしては ASCII pTEX やそれの拡張物が用いられることが一般的であった．pTEX は TEX のエンジン拡張であり，（少々仕様上不便な点
+はあるものの）商業印刷の分野にも用いられるほどの高品質な日本語組版を可能としている．だが，それは弱点にもなってしまった．pTEX という（組版的に）満足なものがあったため，海外で行われている数々の TEX の拡張――例えば 𝜀-TEX や pdfTEX――や，TrueType, OpenType, Unicode といった計算機で日本語を扱う際の状況の変化に追従することを怠ってしまったのだ．ここ数年，若干状況は改善されてきた．現在手に入る大半の pTEX バイナリでは外部 UTF-8 入力が利用可能となり，さらに Unicode 化を推進し，pTEX の内部処理まで Unicode 化した upTEX も開発されている．また，pTEX に 𝜀-TEX 拡張をマージした 𝜀-pTEX も登場し，TEX Live 2011 では pLaTEXが 𝜀-pTEX の上で動作するようになった．だが，pdfTEX 拡張（PDF 直接出力や micro-typesetting）をpTEX に対応させようという動きはなく，海外との gap は未だにあるのが現状である．しかし，LuaTEX の登場で，状況は大きく変わることになった．Lua コードで “callback” を書くことにより，LuaTEX の内部処理に割り込みをかけることが可能となった．これは，エンジン拡張という真似をしなくても，Lua コードとそれに関する TEX マクロを書けば，エンジン拡張とほぼ同程度のことができるようになったということを意味する．LuaTEX-ja は，このアプローチによって Lua コード・TEX マクロによって日本語組版を LuaTEX の上で実現させようという目的で開発が始まったパッケージである．
+
+参考文献：
+- [LuaTEX-ja パッケージ](http://mirrors.ibiblio.org/CTAN/macros/luatex/generic/luatexja/doc/luatexja-ja.pdf)
+- [LuaLATEX-ja 用 jsclasses 互換クラス](http://mirrors.ibiblio.org/CTAN/macros/luatex/generic/luatexja/doc/ltjsclasses.pdf)
+- [LuaTeX-ja の使い方](https://ja.osdn.net/projects/luatex-ja/wiki/LuaTeX-ja%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9)
 
 ## テンプレート
 
