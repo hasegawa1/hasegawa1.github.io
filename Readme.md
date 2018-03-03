@@ -369,13 +369,23 @@ cd hello
 cat <<EOF > hello.c
 #include <stdio.h>
 int main (void) {
-    printf("Hello World!!\n")
+    printf("Hello World!!\n");
 }
 EOF
 gcc hello.c -o hello.out;
 ./hello.out
 ```
 ターミナルに`Hello World!!`と表示されればOK。
+
+## Euler 法
+
+## Symplectic Euler 法
+
+## Runge Kutta 法
+
+## Newton 法
+
+## Monte Carlo 法
 
 # Gnuplot で描画
 
