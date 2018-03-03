@@ -226,3 +226,13 @@ terminal.integrated.shell.windows": "C:\\Windows\\System32\\bash.exe
 というように書くとLinuxを起動させるようになる。
 
 ## VSCode の拡張機能
+- C/C++の拡張
+    - C/C++
+- コードの整形
+    - Beautify
+- コードの自動実行
+    - Runner
+- LaTeX を使う
+    - LaTeX Workshop
+- Git を使う
+    - Git Lens
