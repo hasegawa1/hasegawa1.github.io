@@ -53,7 +53,7 @@ sudo apt full-upgrade
 アップグレード可能なパッケージを更新する。full-upgrade は、「保留」とされるパッケージがある場合に実行する。すると、パッケージを削除しないと更新できないパッケージも処理できる。
 
 ### タイムゾーンの設定
-初期状態では、Ubuntu 内のタイムゾーンが DST となっている。これを日本標準時にするには、以下のコマンドを実行する。
+初期状態では、タイムゾーンが DST となっている。これを日本標準時にするには、以下のコマンドを実行する。
 ```
 sudo dpkg-reconfigure tzdata
 ```
@@ -88,9 +88,9 @@ fi
 - [「Windows Subsystem for Linux(WSL)」セットアップガイド【スクリーンショットつき解説】](https://linuxfan.info/wsl-setup-guide)
 - [apt-getの利用リポジトリを日本サーバーに変更する](https://qiita.com/fkshom/items/53de3a9b9278cd524099)
 - [Running oh my zsh on Windows 10](https://winsmarts.com/running-oh-my-zsh-on-windows-10-6fcb0fbc736b)
-- [Run oh my zsh as integrated shell in VSCode on Windows](https://winsmarts.com/run-oh-my-zsh-as-integrated-shell-in-vscode-on-windows-7d69f72bafa3)
 
 ## ターミナルの設定
+この辺りはうまくいかなかったので調べる必要有り。
 
 ### Tilix のインストール
 ターミナルとして [Tilix](https://gnunn1.github.io/tilix-web/) を使う。まずはインストール。
@@ -133,7 +133,6 @@ rm ./osx-arc-collection_1.4.5_amd64.deb
 ```
 GTK_THEME=OSX-Arc-Shadow tilix
 ```
-この辺りはうまくいかなかったので調べる必要有り。
 
 参考文献：
 - [最高のBoW(Bash on Ubuntu on Windows)環境のために](http://mjhd.hatenablog.com/entry/2016/11/27/185902)
@@ -217,9 +216,13 @@ terminal.integrated.shell.windows": "C:\\Windows\\System32\\bash.exe,
 ```
 というように書くと zsh を起動させるようになる。上の行だけだと bash が起動する。
 
+参考文献：
+- [Run oh my zsh as integrated shell in VSCode on Windows](https://winsmarts.com/run-oh-my-zsh-as-integrated-shell-in-vscode-on-windows-7d69f72bafa3)
+
 # ソフトウェアのインストール
 
 ### gcc
+既にインストールされていた。バージョンは5.4.0。
 ```
 sudo apt install build-essential
 or
@@ -227,11 +230,13 @@ sudo apt install gcc
 ```
 
 ### gfortran
+既にインストールされていた。バージョンは5.4.0。
 ```
 sudo apt install gfortean
 ```
 
 ### Git
+既にインストールされていた。バージョンは2.7.4。
 ```
 sudo apt install git
 ```
@@ -247,10 +252,10 @@ sudo apt install emacs
 ```
 
 ### Gnuplot
+既にインストールされていた。バージョンは 5.0 patchlevel 3。-x11 はインストールされていなかった。-x11 をつけないと terminal の設定がうまくいかないらしい。
 ```
 sudo apt install gnuplot-x11
 ```
--x11 をつけないと terminal の設定がうまくいかないらしい。
 
 参考文献：
 - [Windows Subsystem for Linuxをインストールしてみよう！](https://qiita.com/Aruneko/items/c79810b0b015bebf30bb)
@@ -258,13 +263,23 @@ sudo apt install gnuplot-x11
 - [Cygwin絶対殺すマン ～物理のオタクがWindows Subsystem for Linuxで数値計算できるようになるまで～](https://qiita.com/PikkamanV/items/d308927c395d6e687a6a)
 
 ## VSCode の拡張機能
+VSCode では左のタブの一番下の四角いマークをクリックすると拡張機能を追加できる。よく使うものを上げておく。使いたいものを検索してインストールし、再読み込みすると使えるようになる。
+
 - C/C++の拡張
     - C/C++
 - コードの整形
     - Beautify
 - コードの自動実行
     - Runner
+- コードの印刷
+    - PrintCode
 - LaTeX を使う
     - LaTeX Workshop
 - Git を使う
     - Git Lens
+
+# C言語と数値計算
+
+# Gnuplot で描画
+
+# TeX で文書作成
