@@ -394,7 +394,7 @@ endlocal
 |echo|文字列の表示|
 |cat|ファイルの中身を表示|
 |diff|2つのファイルの差分を表示|
-|tar|圧縮 tar -cvzf ooo.tgz directory<br>解凍 tar -xvzf ooo.tgz|
+|tar|圧縮 tar -cvzf ooo.tar.gz directory<br>解凍 tar -xvzf ooo.tar.gz|
 
 ## パイプライン
 コマンドの標準出力を標準入力に引き渡すこと。例えば、
@@ -403,9 +403,31 @@ ls -1 | sort -r
 ```
 とすると ls の結果を sort コマンドで逆順ソートした結果がかえってくる。
 ```
-ps aux | grep apache | sort -r | tee appache.txt
+ps aux | grep apache | sort -r | tee apache.txt
 ```
 とすると現在実行中のプロセスのうち、apache に関するものを抽出して、逆順ソートし、テキストに保存できる。
+
+## リダイレクション
+標準出力や標準入力を切り替えること。
+- 標準入力の切り替え
+```
+コマンド < infile
+```
+- 標準出力の切り替え
+```
+コマンド > outfile
+```
+- 両方切り替え
+```
+コマンド < infile > outfile
+```
+標準出力で既存ファイルにリダイレクションすると、元のファイルは上書きされる。元のファイルに追記するには
+```
+コマンド >> outfile
+```
+とする。
+- 標準エラー
+コマンドの処理結果以外のエラーメッセージで標準出力とは独立しており、パイプやリダイレクションの対象外。
 
 # C言語と数値計算
 
