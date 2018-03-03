@@ -282,9 +282,9 @@ ext install runner
 - Git を使う
     - Git Lens
 
-## C/C++
-## Beautify
-## Runner
+### C/C++
+### Beautify
+### Runner
 VSCode はプロジェクトでファイルを実行するには launch.json という設定に書くしかなく、実質一つしか実行出来ない為、非常に面倒だ。そこで、Runner という拡張機能を使う。これはファイルタイプや拡張子に従って実行出来る。`Ctrl+,`でユーザー設定を開き、setting.json に以下を追加する。
 ```
 "runner.languageMap": {
@@ -293,7 +293,8 @@ VSCode はプロジェクトでファイルを実行するには launch.json と
 },
 ```
 次に、C:/VSCodeRunnerというディレクトリを作成し、その中に以下のファイルを作成する。
-```bash:crun.bat
+```bash
+// crun.bat
 @echo off
 
 if "%1" equ "" goto :eof
@@ -307,7 +308,8 @@ gcc -lm -o %tempfile%.out "%1"
 del %tempfile%.out
 endlocal
 ```
-```bash:cpprun.bat
+```bash:
+// cpprun.bat
 @echo off
 
 if "%~dpnx1" equ "" goto :eof
@@ -324,14 +326,35 @@ endlocal
 ```
 ここで、VSCode 上で `Ctrl+Shift+R`を押すと、実行できる。複雑な場合は Make を使ったほうがいいかもしれない。
 
-## PrintCode
+参考文献：
+- [Visual Studio Code の拡張を2本書いた。](https://mattn.kaoriya.net/software/vscode/20151122113659.htm)
+- [Visual Studio CodeのRunnerを試してみた](http://nekko1119.hatenablog.com/entry/2015/11/26/040531)
+- [Mac の Visual Studio Code で C/C++/C# を実行する](https://qiita.com/dockurage/items/49e7295e7ff7458e26cd)
+
+### PrintCode
 `Ctrl+Shift+P`でブラウザ経由で印刷できる。
 
 参考文献：
 - [VSCode用に表示中のコードを印刷できる拡張機能を作った](https://blog.bulkus.net/post/printcode/)
 
-## LaTeX Workshop
-## Git Lens
+### LaTeX Workshop
+### Git Lens
+
+# Linux のコマンド
+とりあえず超基本的なものだけ。
+|コマンド|実行内容|
+|:=:|:=:|
+|pwd|現在のディレクトリを表示|
+|ls|現在のディレクトリの中身を表示|
+|mkdir|ディレクトリを作成|
+|cd|ディレクトリに移動|
+|cd ../|親ディレクトリに移動|
+|mv|ファイルの移動|
+|cp|ファイルのコピー|
+|rm|ファイルの削除|
+|echo|文字列の表示|
+|cat|ファイルの中身を表示|
+|diff|2つのファイルの差分を表示|
 
 # C言語と数値計算
 
