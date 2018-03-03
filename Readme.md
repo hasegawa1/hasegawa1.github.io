@@ -74,7 +74,7 @@ sudo update-locale LANG=ja_JP.UTF-8
 ```
 sudo apt install zsh
 ```
-でインストール。ここで、 ~/.bashrc を編集以下を書き足す。
+でインストール。ここで、 ~/.bashrc を編集して以下を書き足す。
 ```
 if test -t 1; then
  exec zsh
@@ -205,16 +205,16 @@ GTK_THEME=OSX-Arc-Shadow tilix
 - [今日からはじめるGitHub 〜 初心者がGitをインストールして、プルリクできるようになるまでを解説](https://employment.en-japan.com/engineerhub/entry/2017/01/31/110000#%E7%92%B0%E5%A2%83%E3%81%AE%E6%A7%8B%E7%AF%892-SSH%E3%81%AE%E9%8D%B5%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B)
 
 ## VSCode の統合ターミナルを WSL に設定する
-VSCode では`Ctrl+@`で統合ターミナルが起動できる。初期設定では PowerShell になっているが、これを zsh に変更する。ファイル＞基本設定＞設定 とクリックしていくとユーザー設定が出てくる。上部の検索バーで
+VSCode では`Ctrl+@`で統合ターミナルが起動できる。初期設定では PowerShell になっているが、これを zsh に変更する。`Ctrl+,`でユーザー設定を開き、上部の検索バーで
 ```
 terminal.integrated.shell.windows
 ```
 と検索し、terminal.integrated.shell.windows の部分にカーソルを合わせると、ペンのマークが出てくるので[設定をコピー]をクリック。右のタブに移るので、
 ```
-terminal.integrated.shell.windows": "C:\\Windows\\System32\\bash.exe,
+"terminal.integrated.shell.windows": "C:\\Windows\\System32\\bash.exe,
 "terminal.integrated.shellArgs.windows": ["-c", "zsh"],
 ```
-というように書くと zsh を起動させるようになる。上の行だけだと bash が起動する。
+というように書くと zsh が起動するようになる。上の行だけだと bash が起動する。
 
 参考文献：
 - [Run oh my zsh as integrated shell in VSCode on Windows](https://winsmarts.com/run-oh-my-zsh-as-integrated-shell-in-vscode-on-windows-7d69f72bafa3)
@@ -263,7 +263,11 @@ sudo apt install gnuplot-x11
 - [Cygwin絶対殺すマン ～物理のオタクがWindows Subsystem for Linuxで数値計算できるようになるまで～](https://qiita.com/PikkamanV/items/d308927c395d6e687a6a)
 
 ## VSCode の拡張機能
-VSCode では左のタブの一番下の四角いマークをクリックすると拡張機能を追加できる。よく使うものを上げておく。使いたいものを検索してインストールし、再読み込みすると使えるようになる。
+VSCode では左のタブの一番下の四角いマークをクリックすると拡張機能を追加できる。よく使うものを上げておく。使いたいものを検索してインストールし、再読み込みすると使えるようになる。あるいは、 VSCode 上で F1 を押して、
+```
+ext install runner
+```
+などとしてもよい。
 
 - C/C++の拡張
     - C/C++
@@ -277,6 +281,57 @@ VSCode では左のタブの一番下の四角いマークをクリックする�
     - LaTeX Workshop
 - Git を使う
     - Git Lens
+
+## C/C++
+## Beautify
+## Runner
+VSCode はプロジェクトでファイルを実行するには launch.json という設定に書くしかなく、実質一つしか実行出来ない為、非常に面倒だ。そこで、Runner という拡張機能を使う。これはファイルタイプや拡張子に従って実行出来る。`Ctrl+,`でユーザー設定を開き、setting.json に以下を追加する。
+```
+"runner.languageMap": {
+    "c": "C:/VSCodeRunner/crun.bat",
+    "cpp": "C:/VSCodeRunner/cpprun.bat"
+},
+```
+次に、C:/VSCodeRunnerというディレクトリを作成し、その中に以下のファイルを作成する。
+```bash:crun.bat
+@echo off
+
+if "%1" equ "" goto :eof
+
+setlocal
+set tempfile=%date:~4%%time::=%
+set tempfile=%tempfile:/=%
+set tempfile=%tempfile:.=%
+gcc -lm -o %tempfile%.out "%1"
+%tempfile%.out
+del %tempfile%.out
+endlocal
+```
+```bash:cpprun.bat
+@echo off
+
+if "%~dpnx1" equ "" goto :eof
+
+setlocal
+set tempfile=%date:~4%%time::=%
+set tempfile=%tempfile:/=%
+set tempfile=%tempfile:.=%
+set tempfile=%tempfile: =%
+gcc -o %tempfile%.out "%~dpnx1" -std=c++1z
+%tempfile%.out
+del %tempfile%.out
+endlocal
+```
+ここで、VSCode 上で `Ctrl+Shift+R`を押すと、実行できる。複雑な場合は Make を使ったほうがいいかもしれない。
+
+## PrintCode
+`Ctrl+Shift+P`でブラウザ経由で印刷できる。
+
+参考文献：
+- [VSCode用に表示中のコードを印刷できる拡張機能を作った](https://blog.bulkus.net/post/printcode/)
+
+## LaTeX Workshop
+## Git Lens
 
 # C言語と数値計算
 
