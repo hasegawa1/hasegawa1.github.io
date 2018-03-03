@@ -484,6 +484,35 @@ gcc hello.c -o hello.out;
 # TeX で文書作成
 
 ## tex とその歴史
+ナントカTeX のまとめ的な何か。
+
+### TeX
+1978年、Donald Knuth によって最初の TeX が作られた。TeX は tex 言語から DVI ファイルを生成できる。
+
+### pTeX
+pTeX は TeX に縦書き組版、日本語禁則処理、日本語と欧文が混在した時の処理、などの日本語向けの様々な機能を追加した処理系である。理系の文書ではよくある日本語と欧文の混在も pTeX からサポートされている。
+
+### eTeX
+同時に、レジスタ上限の増加、新たな条件式の追加、などの拡張が TeX に加えられて eTeX ができた。
+
+### e-pTeX
+こうしてできた2つの処理系 pTeX と eTeX を合体させることにより epTeX ができた。現在の日本語組版ではこれが主に用いられている。
+
+### upTeX, e-upTeX
+pTeX で扱えるようになった日本語はあくまでJIS第2水準まででしかなかった。pTeX をさらに改造して内部文字コードをUnicodeにしたのが upTeX。これを eTeX と合体させたのが e-upTeX。
+
+##  XeTeX
+XeTeX は eTeX を改造したものの一つで、Unicode への対応とフォントに関する拡張が行われている。XeTeX では DVI を拡張した XDV なる形式を経由して PDF を生成する。
+
+### pdfTeX
+これも eTeX を改造したものの一つで、 DVI を経由せずに直接 PDF を生成する。欧米ではこれが主に用いられている。
+
+### LuaTeX
+LuaTeX はpdfTeXの派生で、名前にある通り Lua のコードを TeX ファイルに入れることが出来る。pdfTeX と、内部エンコーディングを Unicode にした Omega という処理系の血統である。pdfTeX の後継ということがもう決定している。
+
+参考文献：
+- [TeX処理系御伽話](https://qiita.com/yyu/items/6404656f822ce14db935)
+- [日本人の知らないTeX - TeXの過去・現在・未来](https://oku.edu.mie-u.ac.jp/texconf10/presentations/yato.pdf)
 
 ## LuaTeX-ja とその設定
 
