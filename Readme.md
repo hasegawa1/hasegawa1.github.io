@@ -306,17 +306,23 @@ ext install runner
 ```
 などとしてもよい。
 
-C/C++の拡張  
+C/C++の拡張
+
 : C/C++
-コードの整形  
+コードの整形
+
 : Beautify
-コードの自動実行  
+コードの自動実行
+
 : Runner
-コードの印刷  
+コードの印刷
+
 : PrintCode
-LaTeX を使う  
+LaTeX を使う
+
 : LaTeX Workshop
-Git を使う  
+Git を使う
+
 : Git Lens
 
 ### C/C++
