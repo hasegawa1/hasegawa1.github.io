@@ -306,18 +306,18 @@ ext install runner
 ```
 などとしてもよい。
 
-- C/C++の拡張
-    - C/C++
-- コードの整形
-    - Beautify
-- コードの自動実行
-    - Runner
-- コードの印刷
-    - PrintCode
-- LaTeX を使う
-    - LaTeX Workshop
-- Git を使う
-    - Git Lens
+C/C++の拡張  
+: C/C++
+コードの整形  
+: Beautify
+コードの自動実行  
+: Runner
+コードの印刷  
+: PrintCode
+LaTeX を使う  
+: LaTeX Workshop
+Git を使う  
+: Git Lens
 
 ### C/C++
 ### Beautify
@@ -465,12 +465,6 @@ gcc hello.c -o hello.out;
 ターミナルに`Hello World!!`と表示されればOK。
 
 ## Euler 法
-
-あ
-: い
-う
-: え
-: お
 
 ## Symplectic Euler 法
 
