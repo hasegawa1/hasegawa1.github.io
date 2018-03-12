@@ -1,4 +1,4 @@
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/2.7.3/MathJax.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/MathJax/2.7.3/MathJax.js"></script>
 
 
 # 環境構築
