@@ -1,8 +1,3 @@
----
-layout: default
-title: 備忘録
----
-
 # 環境構築
 Windows 10 Fall Creators Update 上でC言語とTeXの環境構築をした記録です。(2018年3月1日)
 
