@@ -2,6 +2,12 @@
    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
+<section class="page-header">
+      <h1 class="project-name">hasegawa1</h1>
+      <h2 class="project-tagline">note for me</h2>
+        <a href="https://github.com/hasegawa1/hasegawa1.github.io" class="btn">View on GitHub</a>
+</section>
+
 [View on Github](https://github.com/hasegawa1/hasegawa1.github.io)
 
 論文執筆の環境構築やテンプレートなどの覚書。これを読めばC言語でプログラムを書き、Gnuplotで図を作成し、LuaLaTeXでレポート・論文を書くという工程をGitで管理できるというようなものにするつもり。最初にバージョン情報などをまとめておく。
