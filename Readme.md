@@ -2,8 +2,19 @@
    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
+[https://github.com/hasegawa1/hasegawa1.github.io](View on Github)
+
+論文執筆の環境構築やテンプレートなどの覚書。これを読めばC言語でプログラムを書き、Gnuplotで図を作成し、LuaLaTeXでレポート・論文を書くという工程をGitで管理できるというようなものにするつもり。最初にバージョン情報などをまとめておく。
+|OS       |Windows 10 Home Fall Creators Update|
+|bash     |?|
+|Git      |?|
+|VSCode   |1.21.1|
+|Clang    |?|
+|gnuplot  |?|
+|LuaTeX-ja|?|
+|MathJax  |2.7.3|
+
 # 環境構築
-Windows 10 Fall Creators Update 上でC言語とTeXの環境構築をした記録です。(2018年3月1日)
 
 ## Windows Subsystem for Linux の有効化と Ubuntu のインストール
 
