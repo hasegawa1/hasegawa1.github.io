@@ -1,5 +1,6 @@
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js"></script>
-
+<script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
 # 環境構築
 Windows 10 Fall Creators Update 上でC言語とTeXの環境構築をした記録です。(2018年3月1日)
