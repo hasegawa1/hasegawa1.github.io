@@ -1,3 +1,6 @@
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
 # 環境構築
 Windows 10 Fall Creators Update 上でC言語とTeXの環境構築をした記録です。(2018年3月1日)
 
@@ -9,7 +12,7 @@ Linux の命令を使うために WSL を導入します。仮想環境などの
 2. Windows Subsystem for Linux にチェックを入れる。
 3. WSLのインストールが始まる。インストール終了後、再起動する。
 4. Microsoft Store の検索窓に WSL と入力すると予測変換で[Windows で Linux を実行する]が出てくるので、それをクリック。
-5. Ubuntu を選択し、[入手]をクリックしてインストールした後、[起動]をクリックして起動する。a
+5. Ubuntu を選択し、[入手]をクリックしてインストールした後、[起動]をクリックして起動する。
 6. ユーザー名とパスワードを入力する。
 
 参考文献: 
@@ -572,6 +575,23 @@ LuaTEX-ja パッケージの冒頭から引用
 - [LuaTeX-ja の使い方](https://ja.osdn.net/projects/luatex-ja/wiki/LuaTeX-ja%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9)
 
 ## テンプレート
+
+$$
+\begin{align*}
+  & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
+  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
+  & (x_1, \ldots, x_n) \left( \begin{array}{ccc}
+      \phi(e_1, e_1) & \cdots & \phi(e_1, e_n) \\
+      \vdots & \ddots & \vdots \\
+      \phi(e_n, e_1) & \cdots & \phi(e_n, e_n)
+    \end{array} \right)
+  \left( \begin{array}{c}
+      y_1 \\
+      \vdots \\
+      y_n
+    \end{array} \right)
+\end{align*}
+$$
 
 ## よく使う命令
 
