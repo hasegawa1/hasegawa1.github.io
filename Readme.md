@@ -2,11 +2,7 @@
    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
-<section class="page-header">
-      <h1 class="project-name">hasegawa1</h1>
-      <h2 class="project-tagline">note for me</h2>
-        <a href="https://github.com/hasegawa1/hasegawa1.github.io" class="btn">View on GitHub</a>
-</section>
+<a href="https://github.com/hasegawa1/hasegawa1.github.io" class="btn">View on GitHub</a>
 
 [View on Github](https://github.com/hasegawa1/hasegawa1.github.io)
 
