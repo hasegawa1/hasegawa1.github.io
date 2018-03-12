@@ -2,9 +2,10 @@
    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
-[https://github.com/hasegawa1/hasegawa1.github.io](View on Github)
+[View on Github](https://github.com/hasegawa1/hasegawa1.github.io)
 
 論文執筆の環境構築やテンプレートなどの覚書。これを読めばC言語でプログラムを書き、Gnuplotで図を作成し、LuaLaTeXでレポート・論文を書くという工程をGitで管理できるというようなものにするつもり。最初にバージョン情報などをまとめておく。
+
 |OS       |Windows 10 Home Fall Creators Update|
 |bash     |?|
 |Git      |?|
@@ -24,7 +25,12 @@ Linux の命令を使うために WSL を導入します。仮想環境などの
 2. Windows Subsystem for Linux にチェックを入れる。
 3. WSLのインストールが始まる。インストール終了後、再起動する。
 4. Microsoft Store の検索窓に WSL と入力すると予測変換で[Windows で Linux を実行する]が出てくるので、それをクリック。
-5. Ubuntu を選択し、[入手]をクリックしてインストールした後、[起動]をクリックして起動する。
+5. 好みのディストリビューションを選択し、[入手]をクリックしてインストールした後、[起動]をクリックして起動する。現在入手可能なのは
+- Ubuntu
+- OpenSUSE Leap
+- OpenSUSE Linux Enterprise Server
+- Kali Linux
+- Debian GNU/Linux
 6. ユーザー名とパスワードを入力する。
 
 参考文献: 
