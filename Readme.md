@@ -596,7 +596,7 @@ $$ Lua \TeX -ja パッケージの冒頭から引用 $$
 
 ## テンプレート
 ```tex
-\documentclass[10pt,a4paper,papersize,onecolumn]{ltjsarticle}
+\documentclass[10pt,a4paper,papersize,onecolumn,fleqn]{ltjsarticle}
 ```
 
 $$
@@ -619,7 +619,7 @@ $$
 ### ドキュメントクラス
 LaTeX の文書では最初にドキュメントクラスを指定する。LuaLaTeX-ja の場合は ltjsarticle を使う。論文の場合は ltjsbook とする。長いレポートの場合はオプション [report] を付ければ ltjsreport 相当になる。
 
-オプション
+#### オプション
 
 |10pt      | 本文の欧文文字サイズを10ポイントにする(デフォルト)| 
 |11pt      | 本文の欧文文字サイズを11ポイントにする           |
@@ -631,6 +631,17 @@ LaTeX の文書では最初にドキュメントクラスを指定する。LuaLa
 |papersize | jsシリーズのみのオプション。用紙サイズオプションに従ってPDFのサイズを設定する。|
 |onecolumn | 一段組にする。(デフォルト)                     |
 |twocolumn | 二段組にする。                                |
+|fleqn     | 数式を左端から一定の距離から始める。指定しない場合は中央になる。|
+
+### ノンブルと柱
+「ノンブル」とは各ページに振るページ番号のことで、「柱」とは各ページの上部に出力する章や節の名前のこと。これらは \pagestyle で設定できる。
+
+#### オプション
+
+|empty      |ノンブルも柱も出力しない|
+|plain      |ノンブルをページ下部に出力する。柱は出力しない。(デフォルト)|
+|headings   |ノンブルと柱をページ上部に出力する。|
+|myheadings |基本的に headings と同じ。柱の内容を自由に設定できる。|
 
 ## よく使う命令
 
