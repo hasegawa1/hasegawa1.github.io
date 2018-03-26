@@ -6,14 +6,16 @@
 
 論文執筆の環境構築やテンプレートなどの覚書。これを読めばC言語でプログラムを書き、Gnuplotで図を作成し、LuaLaTeXでレポート・論文を書くという工程をGitで管理できるというようなものにするつもり。最初にバージョン情報などをまとめておく。
 
-|OS       |Windows 10 Home Fall Creators Update|
-|bash     |?|
-|Git      |?|
-|VSCode   |1.21.1|
-|Clang    |?|
-|gnuplot  |?|
-|LuaTeX-ja|?|
-|MathJax  |2.7.3|
+|date                |2018/3/1|
+|OS                  |Windows 10 Home Fall Creators Update|
+|bash                |?|
+|Git                 |?|
+|VSCode              |1.21.1|
+|Clang               |?|
+|gnuplot             |?|
+|LuaTeX-ja           |?|
+|LaTeX Workshop      ||
+|MathJax             |2.7.3|
 
 # 環境構築
 
@@ -593,6 +595,9 @@ $$ Lua \TeX -ja パッケージの冒頭から引用 $$
 - [LuaTeX-ja の使い方](https://ja.osdn.net/projects/luatex-ja/wiki/LuaTeX-ja%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9)
 
 ## テンプレート
+```tex
+\documentclass{ltjsarticle}
+```
 
 $$
 \begin{align*}
@@ -610,6 +615,26 @@ $$
     \end{array} \right)
 \end{align*}
 $$
+
+### ドキュメントクラス
+LaTeX の文書では最初にドキュメントクラスを指定する。LuaLaTeX-ja の場合は ltjsarticle を使う。論文の場合は ltjsbook とする。長いレポートの場合はオプション [report] を付ければ ltjsreport 相当になる。
+
+#### オプション
+文字サイズ
+:10pt 本文の欧文文字サイズを10ポイントにする(デフォルト)
+ 11pt 本文の欧文文字サイズを11ポイントにする
+ 12pt 本文の欧文文字サイズを12ポイントにする
+
+ 用紙サイズ
+ :a4paper 297mm × 210mm (デフォルト)
+  a5paper 210mm × 148mm
+  b4paper 364mm × 257mm
+  b5paper 257mm × 182mm
+
+組み方
+:papersize jsシリーズのみのオプション。用紙サイズオプションに従ってPDFのサイズを設定する。
+ onecolumn 一段組にする。(デフォルト)
+ twocolumn 二段組にする。
 
 ## よく使う命令
 
