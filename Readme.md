@@ -596,7 +596,7 @@ $$ Lua \TeX -ja パッケージの冒頭から引用 $$
 
 ## テンプレート
 ```tex
-\documentclass{ltjsarticle}
+\documentclass[10pt,a4paper,papersize,onecolumn]{ltjsarticle}
 ```
 
 $$
@@ -619,22 +619,17 @@ $$
 ### ドキュメントクラス
 LaTeX の文書では最初にドキュメントクラスを指定する。LuaLaTeX-ja の場合は ltjsarticle を使う。論文の場合は ltjsbook とする。長いレポートの場合はオプション [report] を付ければ ltjsreport 相当になる。
 
-#### オプション
-文字サイズ
-:10pt 本文の欧文文字サイズを10ポイントにする(デフォルト)  
- 11pt 本文の欧文文字サイズを11ポイントにする  
- 12pt 本文の欧文文字サイズを12ポイントにする  
-
- 用紙サイズ
- :a4paper 297mm × 210mm (デフォルト)
-  a5paper 210mm × 148mm
-  b4paper 364mm × 257mm
-  b5paper 257mm × 182mm
-
-組み方
-:papersize jsシリーズのみのオプション。用紙サイズオプションに従ってPDFのサイズを設定する。
- onecolumn 一段組にする。(デフォルト)
- twocolumn 二段組にする。
+オプション
+|10pt      | 本文の欧文文字サイズを10ポイントにする(デフォルト)| 
+|11pt      | 本文の欧文文字サイズを11ポイントにする           |
+|12pt      | 本文の欧文文字サイズを12ポイントにする           |
+|a4paper   | 297mm × 210mm (デフォルト)                     |
+|a5paper   | 210mm × 148mm                                 |
+|b4paper   | 364mm × 257mm                                 |
+|b5paper   | 257mm × 182mm                                 |
+|papersize | jsシリーズのみのオプション。用紙サイズオプションに従ってPDFのサイズを設定する。|
+|onecolumn | 一段組にする。(デフォルト)                     |
+|twocolumn | 二段組にする。                                |
 
 ## よく使う命令
 
