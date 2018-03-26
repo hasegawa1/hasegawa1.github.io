@@ -643,6 +643,31 @@ LaTeX の文書では最初にドキュメントクラスを指定する。LuaLa
 |headings   |ノンブルと柱をページ上部に出力する。|
 |myheadings |基本的に headings と同じ。柱の内容を自由に設定できる。|
 
-## よく使う命令
+## よく使うパッケージ
+
+- geometry  
+aa 
+
+- luatexja-fontspec  
+
+- luatexja-otf  
+
+- amsmath  
+
+- bm
+
+- physics  
+
+- siunitx  
+
+- listings  
+
+- color  
+
+- hyperref  
+
+- graphicx  
+
+- gnuplot-lua-tikz
 
 ## 論文執筆の注意点
